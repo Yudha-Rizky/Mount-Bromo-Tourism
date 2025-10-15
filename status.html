@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Current Status of Mount Bromo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="--bg-img: url('images/current status.jpg');">
+  <div class="bg-overlay">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/bromo1.jpg" alt="logo">
+        <span>Destination</span>
+      </div>
+      <nav class="nav" aria-label="Navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="history.html" class="">History</a>
+        <a href="culture.html" class="">Cultural</a>
+        <a href="status.html" class="">Status</a>
+        <a href="contact.html" class="">Contact</a>
+        <button id="dark-toggle" class="toggle-btn" aria-label="Toggle theme">Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-visual" role="img" aria-label="Hero image">
+        <div class="hero-inner">
+          <header>
+
+    <h1>Current Status of Mount Bromo</h1>
+    
+  </header>
+
+  <article class="content">
+    <h2>Current Attractions</h2>
+    <p>Bromo Tengger Semeru has a unique appeal thanks to its combination of natural landscapes, rich local culture, and adventure experiences.</p>
+    <ul>
+      <li><strong>Spectacular Sunrise Views:</strong> The active Bromo crater and vast sea of sand remain the ultimate backdrop for breathtaking sunrises.</li>
+      <li><strong>Semeru Crater and Peak:</strong> The highest mountain in Java offers exciting climbing challenges for adventurers.</li>
+      <li><strong>Tengger Tribe Culture:</strong> Tourists can experience local traditions and ceremonies up close.</li>
+      <li><strong>Diverse Volcanic Landscapes:</strong> From calderas to savannas and waterfalls, the area offers unmatched scenic diversity.</li>
+    </ul>
+        </div>
+      </div>
+      <aside>
+        <div class="card">
+          <h3>Short Info</h3>
+          <p class="lead">This site is a concise presentation of tourist destinations. Images and text are arranged to be neat and attractive.</p>
+          <p><strong>Contact:</strong> see the Contact page for details.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="main-grid" aria-label="Konten utama">
+      <div class="card">
+    <h3>Wealth of Flora and Fauna</h3>
+    <p>As a conservation area, TNBTS hosts ecosystems ranging from sub-montane to sub-alpine zones. Ancient pine trees, orchids, edelweiss, and various rare grasses dominate its landscape.</p>
+    <p>The park is home to endangered species such as the Javan leopard (<em>Panthera pardus melas</em>), Javan hawk-eagle, deer, and numerous bird species. Aquatic life flourishes in lakes such as Ranu Pani and Ranu Kumbolo.</p>
+  </article>
+
+  <footer class="site-footer">
+    &copy; 2025 Mount Bromo Tourism.
+  </footer>
+  <script>
+// Dark mode toggle + prefers-color-scheme support
+(function(){
+  const btn = document.getElementById('dark-toggle');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem('site-theme');
+  function applyTheme(theme){
+    if(theme === 'dark'){
+      document.documentElement.classList.add('dark');
+      btn.textContent = 'Light';
+    } else if(theme === 'light'){
+      document.documentElement.classList.remove('dark');
+      btn.textContent = 'Dark';
+    } else {
+      // follow system
+      document.documentElement.classList.toggle('dark', window.matchMedia('(prefers-color-scheme: dark)').matches);
+      btn.textContent = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Light' : 'Dark';
+    }
+  }
+  // initial
+  applyTheme(saved || 'auto');
+  // toggle on click
+  btn && btn.addEventListener('click', function(){
+    const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('site-theme', next);
+    applyTheme(next);
+  });
+  // if system preference changes and user hasn't set explicit preference, update
+  window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
+    if(!localStorage.getItem('site-theme')) applyTheme('auto');
+  });
+})();
+</script>
+  </div>
+</body>
+</html>

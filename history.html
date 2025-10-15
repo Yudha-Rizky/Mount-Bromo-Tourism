@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>History of Mount Bromo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="--bg-img: url('images/history.jpg');">
+  <div class="bg-overlay">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/bromo1.jpg" alt="logo">
+        <span>Destination</span>
+      </div>
+      <nav class="nav" aria-label="Navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="history.html" class="">History</a>
+        <a href="culture.html" class="">Cultural</a>
+        <a href="status.html" class="">Status</a>
+        <a href="contact.html" class="">Contact</a>
+        <button id="dark-toggle" class="toggle-btn" aria-label="Toggle theme">Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-visual" role="img" aria-label="Hero image">
+        <div class="hero-inner">
+          <header>
+
+    <h1>The History of Mount Bromo</h1>
+    
+  </header>
+
+  <article class="content">
+    <h2>Historical Background</h2>
+    <p>For tourists, Mount Bromo is often a favorite vacation destination, boasting its enchanting natural beauty. Its vast sea of sand and stunning sunrise views attract thousands of tourists each year.</p>
+    <p>Before becoming a National Park, the Tengger region was a protected forest and nature reserve. Its geological history began with a giant, ancient volcano called Mount Tengger (approximately 4,000 meters above sea level). This volcano then erupted violently, creating a caldera more than eight kilometers wide.</p>
+
+        </div>
+      </div>
+      <aside>
+        <div class="card">
+          <h3>Short Info</h3>
+          <p class="lead">This site is a concise presentation of tourist destinations. Images and text are arranged to be neat and attractive.</p>
+          <p><strong>Contact:</strong> see the Contact page for details.</p>
+        </div>
+      </aside>
+    </section>
+
+    <section class="main-grid" aria-label="Konten utama">
+      <div class="card">
+        Subsequent eruptions filled the caldera floor with volcanic material, forming the plain now known as the Sea of Sand. It is believed that this caldera was once filled with water before subsequent volcanic activity formed new mountains within it, such as Mount Batok, Mount Widodaren, and the most active, Mount Bromo.</p>
+    <p>The history of Bromo is inseparable from the Tengger Tribe, the indigenous inhabitants of this region. According to legend, their origins are linked to the couple Roro Anteng and Joko Seger. This spiritual belief remains alive today, embodied in the annual Yadnya Kasada ceremony. For the Tengger people, Mount Bromo is more than just a view; it's a sacred mountain that is part of their identity and traditions.</p>
+    <p>As a major tourist destination, Bromo Tengger Semeru National Park (TNBTS) continues to experience changes. Unfortunately, its popularity has had its consequences. In 2024, signs of damage were visible in the Sea of Sand, such as soil compaction, waterlogging, and the formation of river channels during rain.</p>
+    <p>According to Endrip Wahyutama, spokesperson for the TNBTS Center, these symptoms occurred due to the disruption of hydrological functions due to the accumulation of high levels of tourism and local community activity. This phenomenon serves as a reminder of the importance of maintaining a balance between tourism and environmental sustainability, so that Bromo's beauty can be enjoyed by future generations.</p>
+  </article>
+
+  
+
+  <footer class="site-footer">
+    &copy; 2025 Mount Bromo Tourism.
+  </footer>
+  <script>
+// Dark mode toggle + prefers-color-scheme support
+(function(){
+  const btn = document.getElementById('dark-toggle');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem('site-theme');
+  function applyTheme(theme){
+    if(theme === 'dark'){
+      document.documentElement.classList.add('dark');
+      btn.textContent = 'Light';
+    } else if(theme === 'light'){
+      document.documentElement.classList.remove('dark');
+      btn.textContent = 'Dark';
+    } else {
+      // follow system
+      document.documentElement.classList.toggle('dark', window.matchMedia('(prefers-color-scheme: dark)').matches);
+      btn.textContent = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Light' : 'Dark';
+    }
+  }
+  // initial
+  applyTheme(saved || 'auto');
+  // toggle on click
+  btn && btn.addEventListener('click', function(){
+    const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('site-theme', next);
+    applyTheme(next);
+  });
+  // if system preference changes and user hasn't set explicit preference, update
+  window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
+    if(!localStorage.getItem('site-theme')) applyTheme('auto');
+  });
+})();
+</script>
+  </div>
+</body>
+</html>

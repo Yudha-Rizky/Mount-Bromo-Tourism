@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mount Bromo Tourism</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="--bg-img: url('images/bromo1.jpg');">
+  <div class="bg-overlay">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/bromo1.jpg" alt="logo">
+        <span>Destination</span>
+      </div>
+      <nav class="nav" aria-label="Navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="history.html" class="">History</a>
+        <a href="culture.html" class="">Cultural</a>
+        <a href="status.html" class="">Status</a>
+        <a href="contact.html" class="">Contact</a>
+        <button id="dark-toggle" class="toggle-btn" aria-label="Toggle theme">Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-visual" role="img" aria-label="Hero image">
+        <div class="hero-inner">
+          <header>
+
+    <h1>Mount Bromo Tourism</h1>
+    <p>Explore the beauty, history, and culture of East Java’s most iconic volcano.</p>
+  </header>
+
+  <section class="intro">
+    <h2>Welcome to Mount Bromo</h2>
+    <p>Mount Bromo, part of the Bromo Tengger Semeru National Park, is one of Indonesia’s most breathtaking natural wonders. With its spectacular sunrise and spiritual atmosphere, Bromo is a destination where nature, legend, and culture unite.</p>
+  </section>
+    
+        </div>
+      </aside>
+    </section>
+  
+<section class="preview">
+    <div class="card">
+      <h3><a href="history.html">History</a></h3>
+      <p>Discover the origin of Mount Bromo and the legend behind its sacred meaning for the Tenggerese people.</p>
+    </div>
+    
+    <section class="main-grid" aria-label="Konten utama">
+      <div class="card">
+             <h3><a href="status.html">Current Status</a></h3>
+      <p>Read about Bromo's current condition, attractions, and efforts to preserve its natural environment.</p>
+    </div>
+    <div class="card">
+      <h3><a href="culture.html">Culture</a></h3>
+      <p>Learn how the local community balances economic progress with cultural and spiritual values.</p>
+    </div>
+  </section>
+
+  <div class="gallery-box">
+    <h3>Pictures</h3>
+    <div class="slider">
+      <div class="slides">
+        <div class="slide">
+          <img src="images/image1.jpg" alt="Image 1">
+        </div>
+        <div class="slide">
+          <img src="images/image2.jpg" alt="Image 2">
+        </div>
+        <div class="slide">
+          <img src="images/image3.jpg" alt="Image 3">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    &copy; 2025 Mount Bromo Tourism.
+  </footer>
+
+  <script>
+  // Dark mode toggle + prefers-color-scheme support
+  (function(){
+    const btn = document.getElementById('dark-toggle');
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const saved = localStorage.getItem('site-theme');
+    function applyTheme(theme){
+      if(theme === 'dark'){
+        document.documentElement.classList.add('dark');
+        btn.textContent = 'Light';
+      } else if(theme === 'light'){
+        document.documentElement.classList.remove('dark');
+        btn.textContent = 'Dark';
+      } else {
+        // follow system
+        document.documentElement.classList.toggle('dark', window.matchMedia('(prefers-color-scheme: dark)').matches);
+        btn.textContent = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Light' : 'Dark';
+      }
+    }
+    // initial
+    applyTheme(saved || 'auto');
+    // toggle on click
+    btn && btn.addEventListener('click', function(){
+      const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+      const next = current === 'dark' ? 'light' : 'dark';
+      localStorage.setItem('site-theme', next);
+      applyTheme(next);
+    });
+    // if system preference changes and user hasn't set explicit preference, update
+    window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
+      if(!localStorage.getItem('site-theme')) applyTheme('auto');
+    });
+  })();
+
+  let currentSlide = 0; // Keep track of the current slide
+  const slides = document.querySelectorAll('.slide'); // Select all slides
+  const totalSlides = slides.length; // Get the total number of slides
+
+  slides[currentSlide].classList.add('active');  // Show the first slide initially
+
+  // Function to move to the next slide
+  function nextSlide() {
+    // Hide the current slide
+    slides[currentSlide].classList.remove('active');
+
+    // Update the current slide index
+    currentSlide = (currentSlide + 1) % totalSlides; // Loop back to the first slide after the last
+
+    // Show the new slide
+    slides[currentSlide].classList.add('active');
+  }
+
+  // Set the interval for automatic sliding
+  setInterval(nextSlide, 3000);
+  </script>
+  </div>
+</body>
+</html>

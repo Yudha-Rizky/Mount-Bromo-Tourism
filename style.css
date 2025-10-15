@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* ===============================
+   Root Variables & Base Styles
+=================================*/
+:root {
+  --accent: #0ea5a4;
+  --accent-dark: #0b7f7b;
+  --bg: rgba(247, 250, 252, 1);
+  --card: rgba(255, 255, 255, 0.9);
+  --muted: #6b7280;
+  --text: #0f172a;
+  --overlay: rgba(15, 23, 42, 0.45);
+  --maxw: 1100px;
+  --radius: 12px;
+  --gap: 1.25rem;
+  --pad: 1.25rem;
+  --bg-img: none;
+  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  min-height: 100%;
+  margin: 0;
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.02), rgba(0, 0, 0, 0.02)), var(--bg);
+  background-image: var(--bg-img);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-color .25s ease, color .25s ease;
+}
+
+/* ===============================
+   Overlay for Readability
+=================================*/
+.bg-overlay {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6));
+  min-height: 100vh;
+  backdrop-filter: blur(0);
+}
+
+/* ===============================
+   Dark Mode
+=================================*/
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: rgba(7, 10, 14, 1);
+    --card: rgba(12, 17, 22, 0.65);
+    --muted: #9ca3af;
+    --text: #000000;
+    --overlay: rgba(2, 6, 23, 0.55);
+  }
+
+  .bg-overlay {
+    background: linear-gradient(180deg, rgba(2, 6, 23, 0.35), rgba(2, 6, 23, 0.6));
+  }
+}
+
+/* Manual dark mode toggle */
+html.dark {
+  --bg: rgb(0, 0, 0);
+  --card: rgba(0, 0, 0, 0.477);
+  --muted: #9ca3af;
+  --text: #e6eef3;
+  --overlay: rgba(2, 6, 23, 0.55);
+}
+
+.header-inner,
+.card,
+.site-footer {
+  transition: background .2s ease, color .2s ease;
+}
+
+/* ===============================
+   Layout
+=================================*/
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 1.25rem;
+}
+
+/* ===============================
+   Header & Navigation
+=================================*/
+.site-header {
+  background: transparent;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  padding: 0.5rem 0;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  background: transparent;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+}
+
+.brand img {
+  height: 48px;
+  width: 48px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 6px 18px rgba(2, 6, 23, 0.08);
+}
+
+.nav {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-left: auto;
+}
+
+.nav a {
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-weight: 600;
+  color: var(--text);
+  opacity: 0.95;
+}
+
+.nav a:hover {
+  background: transparent;
+  color: var(--accent-dark);
+}
+
+.header-inner .nav a.active {
+  background: rgba(14, 165, 164, 0.12);
+  border-radius: 8px;
+  padding-inline: 0.6rem;
+}
+
+/* Toggle Button */
+.toggle-btn {
+  border: 0;
+  background: transparent;
+  padding: 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* ===============================
+   Hero Section
+=================================*/
+.hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: center;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.hero .hero-card {
+  background: linear-gradient(180deg, var(--card), rgba(255, 255, 255, 0.6));
+  padding: 1rem;
+  border-radius: var(--radius);
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.06);
+}
+
+.hero-visual {
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-visual::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+  mix-blend-mode: multiply;
+  pointer-events: none;
+}
+
+.hero-visual .hero-inner {
+  position: relative;
+  z-index: 2;
+  padding: 1.25rem;
+  color: var(--text);
+}
+
+/* ===============================
+  Slide
+===============================*/
+.gallery-box {
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 13px;
+  max-width: auto;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.slider {
+  width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 13px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slides {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.slide.active {
+    display: block;
+}
+
+/* ===============================
+   Card & Text
+=================================*/
+.card {
+  background: var(--card);
+  padding: var(--pad);
+  border-radius: 12px;
+  box-shadow: 0 12px 36px rgba(2, 6, 23, 0.06);
+  color: var(--text);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+p.lead {
+  color: var(--muted);
+  margin-top: 0.25rem;
+}
+
+/* ===============================
+   Images & Utilities
+=================================*/
+.resp-img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ===============================
+   Footer
+=================================*/
+.site-footer {
+  font-size: 0.9rem;
+  color: var(--muted);
+  padding: 1rem 0;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+/* ===============================
+   Links
+=================================*/
+a {
+  color: var(--accent);
+}
+
+/* ===============================
+   Responsive Adjustments
+=================================*/
+@media (min-width: 880px) {
+  .hero {
+    grid-template-columns: 1fr 360px;
+  }
+  .main-grid {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand {
+    font-size: 1rem;
+  }
+  .nav {
+    display: none;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-visual {
+    min-height: 180px;
+  }
+  .header-inner {
+    padding: 0.5rem;
+  }
+}
+
+.bg-fallback {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.9));
+}

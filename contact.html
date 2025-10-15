@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="--bg-img: url('images/bromo1.jpg');">
+  <div class="bg-overlay">
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="images/bromo1.jpg" alt="logo">
+        <span>Destination</span>
+      </div>
+      <nav class="nav" aria-label="Navigation">
+        <a href="index.html" class="active">Home</a>
+        <a href="history.html" class="">History</a>
+        <a href="culture.html" class="">Cultural</a>
+        <a href="status.html" class="">Status</a>
+        <a href="contact.html" class="">Contact</a>
+        <button id="dark-toggle" class="toggle-btn" aria-label="Toggle theme">Dark</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero-visual" role="img" aria-label="Hero image">
+        <div class="hero-inner">
+          <header>
+
+        <h1>Contact & Team Information</h1>
+        
+    </header>
+
+    <section class="contact">
+      <h2>Get in Touch</h2>
+      <p>If you have any questions, or want to book tickets online, please contact us anytime via the link below. .</p>
+
+      <ul>
+          <li><strong>Information:</strong> <a href=https://taplink.cc/tnbts?fbclid=PAZXh0bgNhZW0CMTEAAaekubRKPvzrvzfBoUes-56yYpZzLgVXTbauMOpCcKV9-xebCty-l9Kb-5R__w_aem_yK1R_M9h8OnBaaPK3udl0Q>bbtnbromotenggersemeru</a></li>
+      </ul>
+  </section>
+      
+    </section>
+
+    <section class="main-grid" aria-label="Konten utama">
+      <div class="card">
+        
+
+  <footer class="site-footer">
+    &copy; 2025 Mount Bromo Tourism
+  </footer>
+  <script>
+// Dark mode toggle + prefers-color-scheme support
+(function(){
+  const btn = document.getElementById('dark-toggle');
+  const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const saved = localStorage.getItem('site-theme');
+  function applyTheme(theme){
+    if(theme === 'dark'){
+      document.documentElement.classList.add('dark');
+      btn.textContent = 'Light';
+    } else if(theme === 'light'){
+      document.documentElement.classList.remove('dark');
+      btn.textContent = 'Dark';
+    } else {
+      // follow system
+      document.documentElement.classList.toggle('dark', window.matchMedia('(prefers-color-scheme: dark)').matches);
+      btn.textContent = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Light' : 'Dark';
+    }
+  }
+  // initial
+  applyTheme(saved || 'auto');
+  // toggle on click
+  btn && btn.addEventListener('click', function(){
+    const current = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+    const next = current === 'dark' ? 'light' : 'dark';
+    localStorage.setItem('site-theme', next);
+    applyTheme(next);
+  });
+  // if system preference changes and user hasn't set explicit preference, update
+  window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e){
+    if(!localStorage.getItem('site-theme')) applyTheme('auto');
+  });
+})();
+</script>
+  </div>
+</body>
+</html>
