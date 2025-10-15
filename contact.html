@@ -34,10 +34,42 @@
         <h1>Contact & Team Information</h1>
         
     </header>
-
-    <section class="contact">
-      <h2>Get in Touch</h2>
-      <p>If you have any questions, or want to book tickets online, please contact us anytime via the link below. .</p>
+           <section class="contact">
+      <p>If you have any questions, or want to book tickets online, please contact us anytime via email below</p>
+      <form id="contactForm" class="contact-form" onsubmit="return validateForm(event)"> // javascript
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Nama lengkap" required>
+      
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+      
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tulis pesanmu..." required></textarea>
+      
+        <button type="submit">Send</button>
+      </form>
+      
+      <script>
+      function validateForm(e) {
+        e.preventDefault(); // mencegah reload
+        const name = document.getElementById("name").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
+      
+        if (name === "" || email === "" || message === "") {
+          alert("Semua kolom harus diisi!");
+          return false;
+        }
+        if (!email.includes("@") || !email.includes(".")) {
+          alert("Alamat email tidak valid!");
+          return false;
+        }
+      
+        alert("Terima kasih, pesanmu sudah terkirim!");
+        document.getElementById("contactForm").reset();
+        return true;
+      }
+      </script>
 
       <ul>
           <li><strong>Information:</strong> <a href=https://taplink.cc/tnbts?fbclid=PAZXh0bgNhZW0CMTEAAaekubRKPvzrvzfBoUes-56yYpZzLgVXTbauMOpCcKV9-xebCty-l9Kb-5R__w_aem_yK1R_M9h8OnBaaPK3udl0Q>bbtnbromotenggersemeru</a></li>
