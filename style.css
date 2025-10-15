@@ -341,6 +341,12 @@ a {
   .header-inner {
     padding: 0.5rem;
   }
+}
+
+.bg-fallback {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.9));
+}
+/* Contact Form */
 .contact-form {
   background: var(--card);
   padding: 1.5rem;
@@ -387,9 +393,4 @@ a {
 
 .contact-form button:hover {
   background: var(--accent-dark);
-}
-}
-
-.bg-fallback {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.9));
 }
