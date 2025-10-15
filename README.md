@@ -8,13 +8,13 @@ The main purpose of this project is to demonstrate the ability to build a functi
 
 # Project Structure
 📂 MountBromoTourism/
-├── index.html → Home page with slideshow and introduction
-├── history.html → Page describing Bromo’s historical background
-├── culture.html → Page explaining local culture and traditions
-├── status.html → Page showing the current status of Mount Bromo
-├── contact.html → Contact page with form and JavaScript validation
-├── style.css → Main stylesheet for design and layout
-└── /images/ → Folder containing all images used
+index.html → Home page with slideshow and introduction
+history.html → Page describing Bromo’s historical background
+culture.html → Page explaining local culture and traditions
+status.html → Page showing the current status of Mount Bromo
+contact.html → Contact page with form and JavaScript validation
+style.css → Main stylesheet for design and layout
+images/ → Folder containing all images used
 
 # Features
 
